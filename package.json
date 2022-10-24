@@ -1,0 +1,23 @@
+{
+  "name": "whattoplay",
+  "version": "1.0.0",
+  "description": "#### A video game library by Kusal Tholka Mudalige",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aizealawin/WhatToPlay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aizealawin/WhatToPlay/issues"
+  },
+  "homepage": "https://github.com/aizealawin/WhatToPlay#readme",
+  "dependencies": {
+    "mongoose": "^6.6.7"
+  }
+}
