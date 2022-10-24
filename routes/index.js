@@ -1,13 +1,23 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App'
+const { Router } = require('express')
+const router = Router()
+const controllers = require('../controllers')
 
-import { BrowserRouter } from 'react-router-dom'
+router.get('/', (req, res) => res.send('This is root!'))
 
-const root = createRoot(document.getElementById('root'))
+router.get('/login', (req, res) => res.send('This is login!'))
 
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+router.get('/library', (req, res) => res.send('This is your library'))
+
+router.get('/addNewGame', (req, res) =>
+  res.send('This is where you add a new game')
 )
+
+router.get('/deleteGame', (req, res) =>
+  res.send('This is where you delete a game!')
+)
+
+router.get('/updateLibrary', (req, res) =>
+  res.send('This is where you update games.')
+)
+
+module.exports = router
