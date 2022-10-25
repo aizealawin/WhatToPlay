@@ -5,8 +5,8 @@ const controllers = require('../controllers')
 router.get('/', (req, res) => res.send('This is root!'))
 
 router.post('/createVideoGame', controllers.createVideoGame)
-router.get('/deleteGame', controllers.deleteVideoGame)
-
+router.get('/deleteGame/:id', controllers.deleteVideoGame)
+router.put('/updateGame/:id', controllers.updateVideoGame)
 router.get('/login', controllers.createUser)
 
 router.get('/library', (req, res) => res.send('This is your library'))

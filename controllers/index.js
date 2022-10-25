@@ -1,6 +1,8 @@
 // make my CRUD here
+const User = require('../models/user')
 const VideoGame = require('../models/VideoGame')
 
+// ALL OF MY VIDEOGAME CONTROLLERS BELOW
 const createVideoGame = async (req, res) => {
   try {
     const videogame = await new VideoGame(req.body)
@@ -25,7 +27,35 @@ const deleteVideoGame = async (req, res) => {
   }
 }
 
+const updateVideoGame = async (req, res) => {
+  try {
+    const videogame = await VideoGame.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    )
+    res.status(200).json(videogame)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+// ALL OF MY USER CONTROLLERS BELOW
+const createUser = async (req, res) => {
+  try {
+    const user = await new User(req.body)
+    await user.save()
+    return res.status(201).json({
+      user
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   createVideoGame,
-  deleteVideoGame
+  deleteVideoGame,
+  createUser,
+  updateVideoGame
 }
