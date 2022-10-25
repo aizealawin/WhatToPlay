@@ -12,6 +12,14 @@ const getAllVideoGames = async (req, res) => {
     return res.status(500).json({ error: error.message })
   }
 }
+const getByIdVideoGame = async (req, res) => {
+  try {
+    const videogames = await VideoGame.findById()
+    return res.status(200).json({ videogames })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
 
 const createVideoGame = async (req, res) => {
   try {
@@ -64,6 +72,7 @@ const createUser = async (req, res) => {
 }
 
 module.exports = {
+  getByIdVideoGame,
   getAllVideoGames,
   createVideoGame,
   deleteVideoGame,

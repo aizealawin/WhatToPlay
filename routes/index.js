@@ -8,7 +8,7 @@ router.post('/createVideoGame', controllers.createVideoGame)
 router.delete('/deleteGame/:id', controllers.deleteVideoGame)
 router.put('/updateGame/:id', controllers.updateVideoGame)
 router.get('/library', controllers.getAllVideoGames)
-
+router.get('/library/:id', controllers.getByIdVideoGame)
 router.get('/login', controllers.createUser)
 
 router.get('/updateLibrary', (req, res) =>
