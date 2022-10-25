@@ -13,6 +13,19 @@ const createVideoGame = async (req, res) => {
   }
 }
 
+const deleteVideoGame = async (req, res) => {
+  try {
+    const videogame = await VideoGame.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Videogame Deleted')
+    }
+    throw new Error('Videogame not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
-  createVideoGame
+  createVideoGame,
+  deleteVideoGame
 }

@@ -1,11 +1,12 @@
 const express = require('express')
 const routes = require('./routes')
 const db = require('./db')
+const logger = require('morgan')
 
 const PORT = process.env.port || 3001
 
 const app = express()
-
+app.use(logger('dev'))
 app.use(express.json())
 
 app.use('/api', routes)
