@@ -6,9 +6,9 @@ const PORT = process.env.port || 3001
 
 const app = express()
 
-app.use(express.json)
+app.use(express.json())
 
-app.use('./api', routes)
+app.use('/api', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 

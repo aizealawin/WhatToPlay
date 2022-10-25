@@ -13,4 +13,4 @@ mongoose
 
 const db = mongoose.connection
 
-module.edxports = db
+module.exports = db

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const VideoGame = new Schema(
   {
-    poster: { type: Image, required: true },
+    poster: { type: String, required: true },
     name: { type: String, required: true },
     description: { type: String, required: true }
   },

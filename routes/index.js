@@ -3,7 +3,7 @@ const router = Router()
 const controllers = require('../controllers')
 
 router.get('/', (req, res) => res.send('This is root!'))
-
+router.post('/createVideoGame', controllers.createVideoGame)
 router.get('/login', (req, res) => res.send('This is login!'))
 
 router.get('/library', (req, res) => res.send('This is your library'))
