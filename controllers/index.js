@@ -3,6 +3,16 @@ const User = require('../models/user')
 const VideoGame = require('../models/VideoGame')
 
 // ALL OF MY VIDEOGAME CONTROLLERS BELOW
+
+const getAllVideoGames = async (req, res) => {
+  try {
+    const videogames = await VideoGame.find()
+    return res.status(200).json({ videogames })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 const createVideoGame = async (req, res) => {
   try {
     const videogame = await new VideoGame(req.body)
@@ -54,8 +64,9 @@ const createUser = async (req, res) => {
 }
 
 module.exports = {
+  getAllVideoGames,
   createVideoGame,
   deleteVideoGame,
-  createUser,
-  updateVideoGame
+  updateVideoGame,
+  createUser
 }
