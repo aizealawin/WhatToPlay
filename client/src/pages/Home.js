@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Home = () => {
   return (
@@ -14,10 +15,10 @@ const Home = () => {
         </Link>
       </nav>
       <div className="library">
-        <h2>Library</h2>
+        <h2>Library Goes Here</h2>
       </div>
       <div className="genres">
-        <h2>Genre List</h2>
+        <h2>Genre List Goes Here</h2>
       </div>
     </div>
   )
