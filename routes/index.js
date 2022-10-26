@@ -9,10 +9,8 @@ router.delete('/deleteGame/:id', controllers.deleteVideoGame)
 router.put('/updateGame/:id', controllers.updateVideoGame)
 router.get('/library', controllers.getAllVideoGames)
 router.get('/library/:id', controllers.getByIdVideoGame)
-router.get('/login', controllers.createUser)
 
-router.get('/updateLibrary', (req, res) =>
-  res.send('This is where you update games.')
-)
+router.post('/login', controllers.createUser)
+router.get('/users')
 
 module.exports = router
