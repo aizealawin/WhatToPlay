@@ -25,6 +25,7 @@ const GameDetails = () => {
       setGameDetails(response.data.videogame)
     }
     getGameDetails()
+    console.log(gameDetails)
   }, [gameId])
 
   const delGame = async () => {
