@@ -2,6 +2,9 @@
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import GameCard from './GameCard'
+
+const Library = () => {
 
 const [games, setGames] = useState([])
 
@@ -14,3 +17,22 @@ useEffect(() => {
   getGames()
 }, [])
 
+console.log(games)
+
+return(
+  <div className='container-grid'>
+    {games.map((result) => (
+      <Link to={`/details/${result.id}`} key={result.id}>
+        <GameCard
+          poster={result.poster}
+          name={result.name}
+          description={result.description}
+          />
+      </Link>
+    ))}
+  </div>
+)
+
+}
+
+export default Library
