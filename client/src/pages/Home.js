@@ -3,18 +3,12 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Library from '../components/Library'
+import NavBar from '../components/NavBar'
 
 const Home = () => {
   return (
     <div>
-      <nav className="navBar">
-        <Link to="/">
-          <h1>Home</h1>
-        </Link>
-        <Link to="/addGame">
-          <h1>Add Game</h1>
-        </Link>
-      </nav>
+      <NavBar />
       <div className="library">
         <Library />
       </div>
