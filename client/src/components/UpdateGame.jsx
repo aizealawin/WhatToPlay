@@ -8,6 +8,8 @@ import { useParams } from 'react-router-dom'
 import NavBar from './NavBar'
 
 const UpdateGame = () => {
+const BASE_URL = '/api'
+
 
   let { gameId } = useParams()
 
@@ -22,7 +24,7 @@ const UpdateGame = () => {
   useEffect(() => {
     const getGameDetails = async () => {
       const response = await axios.get(
-        `http://localhost:3001/api/library/${gameId}`
+        `${BASE_URL}/library/${gameId}`
       )
       setGameDetails(response.data.videogame)
     }
@@ -35,7 +37,7 @@ const handleChange = (e) => {
 
 const handleSubmit = (event) => {
   event.preventDefault()    
-  axios.put( `http://localhost:3001/api/updateGame/${gameId}`, formState)
+  axios.put( `${BASE_URL}updateGame/${gameId}`, formState)
 
   setFormState(initialState)
 }

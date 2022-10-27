@@ -21,9 +21,7 @@ const GameDetails = () => {
 
   useEffect(() => {
     const getGameDetails = async () => {
-      const response = await axios.get(
-        `http://localhost:3001/api/library/${gameId}`
-      )
+      const response = await axios.get(`${BASE_URL}${gameId}`)
       setGameDetails(response.data.videogame)
     }
     getGameDetails()
