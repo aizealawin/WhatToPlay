@@ -35,7 +35,7 @@ const GameDetails = () => {
     <div className="game-content">
       <section className="image-container">
         <div>
-          <h3>{gameDetails?.poster}</h3>
+          <img src={gameDetails?.poster} />
         </div>
       </section>
       <section className="details">

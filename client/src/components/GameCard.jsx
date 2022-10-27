@@ -5,7 +5,8 @@ const GameCard = ({poster, name, description}) => {
   return (
     <div className='game-card'>
       <div className="poster">
-        <h3>{poster}</h3>
+        {/* <h3>{poster}</h3> */}
+        <img src={poster} />
       </div>
       <div className='name-desc'>
         <h3>{name}</h3>
