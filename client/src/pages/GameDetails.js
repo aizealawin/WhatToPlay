@@ -6,10 +6,16 @@ import axios from 'axios'
 import NavBar from '../components/NavBar'
 
 const GameDetails = () => {
+  let { gameId } = useParams()
+
+  const initialState = {
+    userName: '',
+    content: '',
+    rating: '',
+    gameId: gameId
+  }
   const [gameDetails, setGameDetails] = useState(null)
   const [formState, setFormState] = useState(initialState)
-
-  let { gameId } = useParams()
 
   useEffect(() => {
     const getGameDetails = async () => {
