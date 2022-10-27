@@ -3,6 +3,7 @@ const routes = require('./routes')
 const db = require('./db')
 const logger = require('morgan')
 const cors = require('cors')
+const URI = process.env.MONGODB_URI
 
 const PORT = process.env.PORT || 3001
 

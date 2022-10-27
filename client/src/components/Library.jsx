@@ -4,14 +4,17 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import GameCard from './GameCard'
 
+
 const Library = () => {
+
+const BASE_URL = '/api'
 
 const [games, setGames] = useState([])
 
 useEffect(() => {
   const getGames = async () => {
     const response = await axios.get(
-      `http://localhost:3001/api/library`)
+      `${BASE_URL}/library`)
     setGames(response?.data.videogames)
   }
   getGames()
