@@ -13,4 +13,8 @@ router.get('/library/:id', controllers.getByIdVideoGame)
 router.post('/login', controllers.createUser)
 router.get('/users')
 
+router.post('/addComment', controllers.createComment)
+router.get('/comments', controllers.getAllComments)
+router.get('/comments/:id', controllers.getCommentById)
+
 module.exports = router

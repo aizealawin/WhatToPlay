@@ -7,6 +7,7 @@ import NavBar from '../components/NavBar'
 
 const GameDetails = () => {
   const [gameDetails, setGameDetails] = useState(null)
+  const [formState, setFormState] = useState(initialState)
 
   let { gameId } = useParams()
 
@@ -35,7 +36,6 @@ const GameDetails = () => {
   return (
     <div>
       <NavBar />
-
       <div className="game-content">
         <section className="image-container">
           <div>
@@ -56,6 +56,11 @@ const GameDetails = () => {
           <button>Update Game</button>
         </Link>
       </div>
+      <section className="comments">
+        <div>
+          <textarea id="comment" cols="30" rows="10"></textarea>
+        </div>
+      </section>
     </div>
   )
 }

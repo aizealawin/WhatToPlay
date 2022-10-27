@@ -1,6 +1,7 @@
 // make my CRUD here
 const User = require('../models/user')
 const VideoGame = require('../models/VideoGame')
+const Comment = require('../models/comments')
 
 // ALL OF MY VIDEOGAME CONTROLLERS BELOW
 
@@ -85,6 +86,42 @@ const getUserById = async (req, res) => {
   }
 }
 
+// COMMENT CONTROLLERS BELOW
+
+const createComment = async (req, res) => {
+  try {
+    const comment = await new Comment(req.body)
+    await comment.save()
+    return res.status(201).json({
+      comment
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+const getCommentById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const comment = await Comment.findById(id)
+    if (comment) {
+      return res.status(200).json({ comment })
+    }
+    return res.status(404).send('Comment with the specific ID does not exist')
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+const getAllComments = async (req, res) => {
+  try {
+    const comments = await Comment.find()
+    return res.status(200).json({ comments })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getByIdVideoGame,
   getAllVideoGames,
@@ -92,5 +129,8 @@ module.exports = {
   deleteVideoGame,
   updateVideoGame,
   createUser,
-  getUserById
+  getUserById,
+  createComment,
+  getCommentById,
+  getAllComments
 }
