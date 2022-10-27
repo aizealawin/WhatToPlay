@@ -12,7 +12,6 @@ const UpdateGame = () => {
   let { gameId } = useParams()
 
   const initialState = {
-    poster: "",
     name:"",
     description:""
   }
@@ -47,15 +46,7 @@ const handleSubmit = (event) => {
     <div> 
       <NavBar />
       <form onSubmit={handleSubmit}>
-        Add Game Here <br/>
-        <input 
-        type='text'
-        id='poster'
-        onChange={handleChange} 
-        value={formState.poster} 
-        placeholder={'poster link'}
-        />
-        
+        Update Game Here <br/>   
         <input 
         type='text' 
         id='name'
