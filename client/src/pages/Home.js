@@ -16,12 +16,9 @@ const Home = () => {
         </Link>
       </nav>
       <div className="library">
-        <h2>Library Goes Here</h2>
         <Library />
       </div>
-      <div className="genres">
-        <h2>Genre List Goes Here</h2>
-      </div>
+      <div className="genres">{/* <h2>Genre List Goes Here</h2> */}</div>
     </div>
   )
 }
