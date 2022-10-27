@@ -22,7 +22,7 @@ const GameDetails = () => {
   useEffect(() => {
     const getGameDetails = async () => {
       const response = await axios.get(`${BASE_URL}/${gameId}`)
-      setGameDetails(response.data.videogame)
+      setGameDetails(response?.data.videogame)
     }
     getGameDetails()
     console.log(gameDetails)
