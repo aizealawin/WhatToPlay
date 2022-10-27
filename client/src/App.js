@@ -3,6 +3,7 @@ import AddGame from './components/AddGame'
 import Home from './pages/Home'
 import GameDetails from './pages/GameDetails'
 import './styles/App.css'
+import UpdateGame from './components/UpdateGame'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/addGame" element={<AddGame />} />
           <Route path="/library/:gameId" element={<GameDetails />} />
+          <Route path="/updateGame/:gameId" element={<UpdateGame />} />
         </Routes>
       </main>
     </div>
