@@ -16,5 +16,6 @@ router.get('/users')
 router.post('/addComment', controllers.createComment)
 router.get('/comments', controllers.getAllComments)
 router.get('/comments/:id', controllers.getCommentById)
+router.delete('/deleteComment/:id', controllers.deleteComment)
 
 module.exports = router

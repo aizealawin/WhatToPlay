@@ -44,7 +44,7 @@ const GameDetails = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    axios.put(`http://localhost:3001/api/addComment`, formState)
+    axios.post(`http://localhost:3001/api/addComment`, formState)
 
     setFormState(initialState)
   }
