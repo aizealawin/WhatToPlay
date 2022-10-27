@@ -15,9 +15,9 @@ const getAllVideoGames = async (req, res) => {
 const getByIdVideoGame = async (req, res) => {
   try {
     const { id } = req.params
-    const videogames = await VideoGame.findById(id)
-    if (videogames) {
-      return res.status(200).json({ videogames })
+    const videogame = await VideoGame.findById(id)
+    if (videogame) {
+      return res.status(200).json({ videogame })
     }
     return res.status(404).send('Videogame with the specific ID does not exist')
   } catch (error) {
@@ -39,7 +39,8 @@ const createVideoGame = async (req, res) => {
 
 const deleteVideoGame = async (req, res) => {
   try {
-    const videogame = await VideoGame.findByIdAndDelete(id)
+    const { id } = req.params
+    const deleted = await VideoGame.findByIdAndDelete(id)
     if (deleted) {
       return res.status(200).send('Videogame Deleted')
     }
