@@ -14,8 +14,12 @@ const getAllVideoGames = async (req, res) => {
 }
 const getByIdVideoGame = async (req, res) => {
   try {
-    const videogame = await VideoGame.findById()
-    return res.status(200).json({ videogames })
+    const { id } = req.params
+    const videogames = await VideoGame.findById(id)
+    if (videogames) {
+      return res.status(200).json({ videogames })
+    }
+    return res.status(404).send('Videogame with the specific ID does not exist')
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }

@@ -22,7 +22,7 @@ console.log(games)
 return(
   <div className='container-grid'>
     {games.map((result) => (
-      <Link to={`/details/${result.id}`} key={result.id}>
+      <Link to={`/library/${result._id}`} key={result.id}>
         <GameCard
           poster={result.poster}
           name={result.name}

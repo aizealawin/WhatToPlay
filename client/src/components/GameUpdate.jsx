@@ -1,1 +1,0 @@
-// has a form that updates status of a game, complete or not 
