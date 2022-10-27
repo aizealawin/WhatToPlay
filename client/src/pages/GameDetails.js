@@ -14,6 +14,7 @@ const GameDetails = () => {
     rating: '',
     gameId: gameId
   }
+
   const [gameDetails, setGameDetails] = useState(null)
   const [formState, setFormState] = useState(initialState)
 
@@ -27,8 +28,6 @@ const GameDetails = () => {
     getGameDetails()
   }, [gameId])
 
-  console.log(gameDetails)
-
   const delGame = async () => {
     const response = await axios.delete(
       `http://localhost:3001/api/deleteGame/${gameId}`
@@ -37,6 +36,17 @@ const GameDetails = () => {
 
   const handleDelClick = (e) => {
     delGame()
+  }
+
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.id]: e.target.value })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    axios.put(`http://localhost:3001/api/addComment`, formState)
+
+    setFormState(initialState)
   }
 
   return (
@@ -63,8 +73,34 @@ const GameDetails = () => {
         </Link>
       </div>
       <section className="comments">
+        Comment Below
         <div>
-          <textarea id="comment" cols="30" rows="10"></textarea>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              id="userName"
+              value={formState.userName}
+              placeholder={'username'}
+              onChange={handleChange}
+            />{' '}
+            <br />
+            <textarea
+              id="content"
+              cols="30"
+              rows="10"
+              value={formState.content}
+              onChange={handleChange}
+            ></textarea>
+            <br />
+            <input
+              type="text"
+              id="rating"
+              onChange={handleChange}
+              value={formState.rating}
+              placeholder={'rating'}
+            />
+            <button type="submit">Post Comment</button>
+          </form>
         </div>
       </section>
     </div>
