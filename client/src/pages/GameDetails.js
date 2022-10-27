@@ -7,6 +7,7 @@ import NavBar from '../components/NavBar'
 
 const GameDetails = () => {
   let { gameId } = useParams()
+  const BASE_URL = '/api'
 
   const initialState = {
     userName: '',
@@ -29,9 +30,7 @@ const GameDetails = () => {
   }, [gameId])
 
   const delGame = async () => {
-    const response = await axios.delete(
-      `http://localhost:3001/api/deleteGame/${gameId}`
-    )
+    const response = await axios.delete(`${BASE_URL}/deleteGame/${gameId}`)
   }
 
   const handleDelClick = (e) => {
@@ -44,7 +43,7 @@ const GameDetails = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    axios.post(`http://localhost:3001/api/addComment`, formState)
+    axios.post(`${BASE_URL}/addComment`, formState)
 
     setFormState(initialState)
   }

@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 
 const AddGame = () => {
+  const BASE_URL = '/api'
 
   const initialState = {
     poster: "",
@@ -20,7 +21,7 @@ const AddGame = () => {
 useEffect(() => {
   const getGames = async () => {
     const response = await axios.get(
-      `http://localhost:3001/api/library`)
+      `${BASE_URL}/library`)
     setGames(response?.data.videogames)
   }
   getGames()
@@ -33,7 +34,7 @@ const handleChange = (e) => {
 
 const handleSubmit = (event) => {
   event.preventDefault()    
-  axios.post( `http://localhost:3001/api/createVideoGame`, formState)
+  axios.post( `${BASE_URL}/createVideoGame`, formState)
 
   setFormState(initialState)
 }
