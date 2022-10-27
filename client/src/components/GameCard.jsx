@@ -10,7 +10,7 @@ const GameCard = ({poster, name, description}) => {
       </div>
       <div className='name-desc'>
         <h3>{name}</h3>
-        <h3>{description}</h3>
+        {/* <h3>{description}</h3> */}
       </div>
     </div>
   )
