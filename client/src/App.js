@@ -8,7 +8,6 @@ import UpdateGame from './components/UpdateGame'
 function App() {
   return (
     <div className="App">
-      <header>{/* nav goes here */}</header>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

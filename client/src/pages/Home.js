@@ -8,6 +8,7 @@ import NavBar from '../components/NavBar'
 const Home = () => {
   return (
     <div>
+      <img src="https://cdn.discordapp.com/attachments/725175628936118375/1035580054098423920/WhatToPlay_300_75_px_1.png" />
       <NavBar />
       <div className="library">
         <Library />
