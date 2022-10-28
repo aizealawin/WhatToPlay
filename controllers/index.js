@@ -140,7 +140,7 @@ const findCommentsByGameId = async (req, res) => {
     const { id } = req.params
     const comments = await Comment.find({ gameId: id })
     if (comments) {
-      return res.status(200).json({ comment })
+      return res.status(200).json({ comments })
     }
     return res
       .status(404)
