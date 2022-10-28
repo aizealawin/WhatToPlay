@@ -36,6 +36,7 @@ const GameDetails = () => {
     }
     getCommentList()
   }, [gameId])
+  console.log(commentList)
 
   const delGame = async () => {
     const response = await axios.delete(`${BASE_URL}/deleteGame/${gameId}`)
