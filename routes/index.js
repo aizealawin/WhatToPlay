@@ -17,5 +17,6 @@ router.post('/addComment', controllers.createComment)
 router.get('/comments', controllers.getAllComments)
 router.get('/comments/:id', controllers.getCommentById)
 router.delete('/deleteComment/:id', controllers.deleteComment)
+router.get('/commentList/:id', controllers.findCommentsByGameId)
 
 module.exports = router

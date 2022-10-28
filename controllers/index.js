@@ -135,6 +135,21 @@ const deleteComment = async (req, res) => {
   }
 }
 
+const findCommentsByGameId = async (req, res) => {
+  try {
+    const { id } = req.params
+    const comments = await Comment.find({ gameId: id })
+    if (comments) {
+      return res.status(200).json({ comment })
+    }
+    return res
+      .status(404)
+      .send('Comments with the specific gameID do not exist')
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getByIdVideoGame,
   getAllVideoGames,
@@ -146,5 +161,6 @@ module.exports = {
   createComment,
   getCommentById,
   getAllComments,
-  deleteComment
+  deleteComment,
+  findCommentsByGameId
 }

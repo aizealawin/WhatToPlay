@@ -17,6 +17,7 @@ const GameDetails = () => {
   }
 
   const [gameDetails, setGameDetails] = useState(null)
+  const [commentList, setCommentList] = useState(null)
   const [formState, setFormState] = useState(initialState)
 
   useEffect(() => {
@@ -26,6 +27,14 @@ const GameDetails = () => {
     }
     getGameDetails()
     console.log(gameDetails)
+  }, [gameId])
+
+  useEffect(() => {
+    const getCommentList = async () => {
+      const response = await axios.get(`${BASE_URL}/comments`)
+      setCommentList(response.data.comments)
+    }
+    getCommentList()
   }, [gameId])
 
   const delGame = async () => {
