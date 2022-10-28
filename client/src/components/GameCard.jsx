@@ -6,7 +6,7 @@ const GameCard = ({poster, name, description}) => {
     <div className='game-card'>
       <div className="poster">
         {/* <h3>{poster}</h3> */}
-        <img src={poster} />
+        <img className='rendered-poster' src={poster} />
       </div>
       <div className='name-desc'>
         <h3>{name}</h3>

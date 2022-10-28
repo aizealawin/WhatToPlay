@@ -5,11 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
 body{
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Poppins', sans-serif;
+  background-color: whitesmoke;
 }
 
-nav{
+.navBar{
   display:flex;
+  margin: auto;
+  justify-content: center;
 }
 
 h1{
@@ -17,12 +20,22 @@ h1{
   background-color:#DEE3FF;
   margin: 13px;
   border-radius:15px;
+
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+
+a:hover{
+  color:white;
+  transition: 0.3s;
 }
 
 h1:hover{
   color:white;
   background-color:#2D3779;
-   transition: 0.3s;
+  transition: 0.3s;
 }
 
 /* See details/Add comment - section */
@@ -63,9 +76,34 @@ input{
 }
 
 textarea{
-   border-radius: 20px;
+  border-radius: 20px;
   padding: 10px;
   margin: 15px;
   border: 1px solid #DEE3FF ;
   background-image: linear-gradient(to right, #F1FAFF,#DEE3FF);
+}
+
+.container-grid{
+  display: flex;
+  margin: 5px;
+  justify-content: space-evenly;
+}
+
+.game-card{
+  float: right;
+  margin: 5%;
+  background-color: pink;
+  border-radius: 10px;
+}
+
+/* https://www.w3schools.com/css/css3_shadows_box.asp */
+.game-card:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+}
+
+.rendered-poster{
+height: 400px;
+width: 250px;
+border-radius: 10px;
 }
