@@ -26,17 +26,16 @@ const GameDetails = () => {
       setGameDetails(response.data.videogame)
     }
     getGameDetails()
-    console.log(gameDetails)
   }, [gameId])
 
   useEffect(() => {
     const getCommentList = async () => {
       const response = await axios.get(`${BASE_URL}/commentList/${gameId}`)
-      setCommentList(response.data.comments)
+      console.log(response)
+      setCommentList(response?.data.comments)
     }
     getCommentList()
-  }, [gameId])
-  console.log(commentList)
+  }, [])
 
   const delGame = async () => {
     const response = await axios.delete(`${BASE_URL}/deleteGame/${gameId}`)
@@ -110,11 +109,12 @@ const GameDetails = () => {
             <button type="submit">Post Comment</button>
           </form>
           <div>
-            {commentList.map((result) => (
-              <div key={result._id}>
-                <h4>{result.userName}</h4>
-                <p>{result.content}</p>
-                <p>{result.rating}</p>
+            {commentList?.map((result) => (
+              <div key={result?._id}>
+                {console.log('hello')}
+                <h4>{result?.userName}</h4>
+                <p>{result?.content}</p>
+                <p>{result?.rating}</p>
               </div>
             ))}
           </div>
