@@ -108,13 +108,15 @@ const GameDetails = () => {
             />
             <button type="submit">Post Comment</button>
           </form>
-          {commentList.map((result) => (
-            <div key={result._id}>
-              <h4>{result.userName}</h4>
-              <p>{result.content}</p>
-              <p>{result.rating}</p>
-            </div>
-          ))}
+          <div>
+            {commentList.map((result) => (
+              <div key={result._id}>
+                <h4>{result.userName}</h4>
+                <p>{result.content}</p>
+                <p>{result.rating}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
