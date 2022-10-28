@@ -87,13 +87,13 @@ textarea{
   display: flex;
   margin: 5px;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 form{
   color: white;
 }
 .game-content{
   color: white;
-  margin: 10px;
 }
 .game-card{
   float: right;
