@@ -41,6 +41,16 @@ const GameDetails = () => {
     const response = await axios.delete(`${BASE_URL}/deleteGame/${gameId}`)
   }
 
+  const delComment = async (commentId) => {
+    const response = await axios.delete(
+      `${BASE_URL}/deleteComment/${commentId}`
+    )
+  }
+  const handleCommentDelClick = (e) => {
+    const commentId = e.target.value
+    delComment(commentId)
+  }
+
   const handleDelClick = (e) => {
     delGame()
   }
@@ -115,6 +125,13 @@ const GameDetails = () => {
                 <h4>{result?.userName}</h4>
                 <p>{result?.content}</p>
                 <p>{result?.rating}</p>
+                <button
+                  type="button"
+                  value={result?._id}
+                  onClick={handleCommentDelClick}
+                >
+                  Delete
+                </button>
               </div>
             ))}
           </div>
