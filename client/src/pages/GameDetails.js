@@ -31,7 +31,6 @@ const GameDetails = () => {
   useEffect(() => {
     const getCommentList = async () => {
       const response = await axios.get(`${BASE_URL}/commentList/${gameId}`)
-      console.log(response)
       setCommentList(response?.data.comments)
     }
     getCommentList()
@@ -83,7 +82,9 @@ const GameDetails = () => {
           {gameDetails?.description}
         </section>
         <Link to="/">
-          <button onClick={handleDelClick}>Delete Game</button>
+          <button className="delete" onClick={handleDelClick}>
+            Delete Game
+          </button>
         </Link>
         <Link to={`/updateGame/${gameId}`}>
           <button>Update Game</button>
@@ -121,7 +122,6 @@ const GameDetails = () => {
           <div>
             {commentList?.map((result) => (
               <div key={result?._id}>
-                {console.log('hello')}
                 <h4>{result?.userName}</h4>
                 <p>{result?.content}</p>
                 <p>{result?.rating}</p>

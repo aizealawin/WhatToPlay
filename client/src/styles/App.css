@@ -2,37 +2,70 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav{
+  display:flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1{
+  padding: 15px;
+  background-color:#DEE3FF;
+  margin: 13px;
+  border-radius:15px;
+}
+
+h1:hover{
+  color:white;
+  background-color:#2D3779;
+   transition: 0.3s;
+}
+
+/* See details/Add comment - section */
+button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border:none;
+  padding: 10px 10px 15px 10px;
+  margin: 0px 5px;
+  border-radius: 7px;
   color: white;
+  background-color: #8594E8;
+/*   box-shadow:inset 0 -0.8em 0 -0.4em rgba(0,0,0,0.50); */
+    box-shadow:inset 0 -7px 0 0 rgba(0,0,0,0.50);
 }
 
-.App-link {
-  color: #61dafb;
+.delete{
+  background-color: #DC4533;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover{
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  padding: 10px 10px 10px 10px;
+  box-shadow:inset 0 -3px 0 0 rgba(0,0,0,0.50);
+  transition: 0.2s;
+}
+
+button:active{
+  color: black;
+}
+
+input{
+  border: 2px solid #DEE3FF ;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+textarea{
+   border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+  border: 1px solid #DEE3FF ;
+  background-image: linear-gradient(to right, #F1FAFF,#DEE3FF);
 }

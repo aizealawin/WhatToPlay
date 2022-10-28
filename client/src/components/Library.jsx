@@ -20,7 +20,6 @@ useEffect(() => {
   getGames()
 }, [])
 
-console.log(games)
 
 return(
   <div className='container-grid'>
