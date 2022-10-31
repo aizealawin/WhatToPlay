@@ -2,9 +2,7 @@
 
 #### A video game library by Kusal Tholka Mudalige
 
-#### [Trello Board]()
-
-#### [Hosted Project](https://whattoplayktm.herokuapp.com/) - Link to be posted.
+#### [Hosted Project](https://whattoplayktm.herokuapp.com/)
 
 ## **_Description_**
 
