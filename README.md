@@ -74,6 +74,20 @@
 
 ![CHD](https://cdn.discordapp.com/attachments/725175628936118375/1032518165978152980/What_To_Play_Library.png)
 
+## **_Working Screenshots_**
+
+### Home Page
+
+![HomePage](https://cdn.discordapp.com/attachments/397462962140348417/1036614968088469584/Screen_Shot_2022-10-28_at_1.04.08_PM.png)
+
+### Add Game
+
+![AddGame](https://cdn.discordapp.com/attachments/397462962140348417/1036614967614525462/Screen_Shot_2022-10-28_at_1.04.14_PM.png)
+
+### Game Details
+
+![GameDetails](https://cdn.discordapp.com/attachments/397462962140348417/1036614967044087878/Screen_Shot_2022-10-28_at_1.04.24_PM.png)
+
 ## **Credits**
 
-### Imagine having credits at this time.
+### W3Schools for CSS tricks and features
